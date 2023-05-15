@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Transition Occupancy Matching (TOM) is a policy-aware model reinforcement learning algorithm that achieves high sample-efficiency and asymptotic performance.">
+  <meta name="keywords" content="model-based reinforcement learning, dual reinforcement learning">
+  <meta property="og:image" content="./static/images/peg_preview.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIV</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0GWRL87RE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E0GWRL87RE');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://www.seas.upenn.edu/~jasonyma/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://sites.google.com/view/vip-rl">
+            VIP: Large-Scale Value Pre-Training (ICLR 2023)
+          </a>
+          <a class="navbar-item" href="https://jasonma2016.github.io/GoFAR/">
+            GoFAR: Offline Goal-Conditioned RL (NeurIPS 2022)
+          </a>
+          <a class="navbar-item" href="https://sites.google.com/view/smodice/home">
+            SMODICE: Offline Imitation Learning (ICML 2022)
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            TOM: Learning Policy-Aware Models for Model-Based Reinforcement Learning via Transition Occupancy Matching </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.seas.upenn.edu/~jasonyma/">Jason Ma*</a>,</span>
+              <span class="author-block">
+                <a href="https://kausiksivakumar.github.io/">Kausik Sivakumar*</a>,</span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/jasyan/">Jason Yan</a>,</span>
+                  <span class="author-block">
+                    <a href="https://obastani.github.io/">Osbert Bastani</a>,</span>
+                    <span class="author-block">
+                      <a href="https://www.seas.upenn.edu/~dineshj/">Dinesh Jayaraman</a>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">University of Pennsylvania</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/pdf/2210.00030.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/abs/2210.00030"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a target="_blank" href="https://openreview.net/pdf?id=djJLvSur1jZ"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://github.com/kausiksivakumar/TOM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Colab Link. -->
+              <!-- <span class="link-block">
+                <a target="_blank" href="https://colab.research.google.com/drive/1mbr8HHjWAhTQHUP2Y-QOgByuOOXBpusD?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-google"></i>
+                  </span>
+                  <span>Colab Demo</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img width="100%" height="100%" src="./static/videos/tom_teaser.gif" />
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 style="text-align:left" class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>How can we pre-train and fine-tune a multi-modal</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 style="text-align:left" class="title is-3">LIV Zero-Shot Reward</h2>
+        <div class="content has-text-justified">
+        TODO.        
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 style="text-align:left" class="title is-4">Unseen Human Videos</h3>
+        <div class="content has-text-justified">
+        TODO.        
+        </div>
+      </div>
+    </div>
+    <img width="100%" height="100%" src="./static/videos/liv_EK_seen/198000_epickitchen_open cabinet_3.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_EK_seen/198000_epickitchen_open microwave_1.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_EK_seen/198000_epickitchen_open door_3.gif" />
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 style="text-align:left" class="title is-4">Unseen Robot Videos</h3>
+        <div class="content has-text-justified">
+        TODO.        
+        </div>
+      </div>
+    </div>
+    <!-- <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_dishwasher.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_fridge.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_hang.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_tap.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_toaster.gif" /> -->
+
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_door_close.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_fridge_open.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_fridge_close.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_dishwasher_open.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_hat.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_toaster.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_object.gif" />
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 style="text-align:left" class="title is-4">Unseen Human Videos</h3>
+        <div class="content has-text-justified">
+        TODO.        
+        </div>
+      </div>
+    </div>
+    <img width="100%" height="100%" src="./static/videos/liv_EK_unseen/0_epickitchen_open cabinet_0.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_EK_unseen/0_epickitchen_open microwave_0.gif" />
+    <img width="100%" height="100%" src="./static/videos/liv_EK_unseen/0_epickitchen_open door_3.gif" />
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 style="text-align:left" class="title is-4">How can I generate LIV reward curves on my own videos?</h3>
+        <div class="content has-text-justified">
+        This is quite easy! We have prepared the code to exactly reproduce these videos in our code! TODO. 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 style="text-align:left" class="title is-3">Exploration</h2>
+        <div class="content has-text-justified">
+          <p>
+            <span class="method">PEG</span>'s superior evaluation performance is attributed to its sophisticated exploration, which enables the agent to learn from more informative data. PEG learns complex skills like cartwheeling in the walker environment, obstacle navigation in the ant maze, and stacking in the block environment all through an unsupervised exploration objective.
+          </p>
+        </div>
+      </div>
+    </div>
+    <video id="matting-video" autoplay muted loop controls playsinline width="100%">
+      <source src="./static/videos/peg_exploration_row.mp4"
+              type="video/mp4">
+    </video>
+  </div>
+</section> -->
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{
+  hu2023planning,
+  title={Planning Goals for Exploration},
+  author={Edward S. Hu and Richard Chang and Oleh Rybkin and Dinesh Jayaraman},
+  booktitle={The Eleventh International Conference on Learning Representations },
+  year={2023},
+  url={https://openreview.net/forum?id=6qeBuZSo7Pr}
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <a class="icon-link" href="https://github.com/JasonMa2016" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Template taken from <a
+              href="https://github.com/nerfies/nerfies.github.io">here</a>.
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
