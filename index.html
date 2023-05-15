@@ -7,7 +7,7 @@
   <meta name="keywords" content="model-based reinforcement learning, dual reinforcement learning">
   <meta property="og:image" content="./static/images/peg_preview.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LIV</title>
+  <title>TOM</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0GWRL87RE"></script>
@@ -187,7 +187,7 @@
         <h2 style="text-align:left" class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            <b>How can we pre-train and fine-tune a multi-modal</b>
+            <b>Standard model-based reinforcement learning (MBRL) approaches fit a transition model of the environment to all past experience, but this wastes model capacity on data that is irrelevant for policy improvement. We instead propose a new "transition occupancy matching" (TOM) objective for MBRL model learning: a model is good to the extent that the current policy experiences the same distribution of transitions inside the model as in the real environment. We derive TOM directly from a novel lower bound on the standard reinforcement learning objective. To optimize TOM, we show how to reduce it to a form of importance weighted maximum-likelihood estimation, where the automatically computed importance weights identify policy-relevant past experiences from a replay buffer, enabling stable optimization. TOM thus offers a plug-and-play model learning sub-routine that is compatible with any backbone MBRL algorithm. On various Mujoco continuous robotic control tasks, we show that TOM successfully focuses model learning on policy-relevant experience and drives policies faster to higher task rewards than alternative model learning approaches</b>
           </p>
         </div>
       </div>
@@ -205,73 +205,6 @@
       </div>
     </div> -->
     <!--/ Paper video. -->
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 style="text-align:left" class="title is-3">LIV Zero-Shot Reward</h2>
-        <div class="content has-text-justified">
-        TODO.        
-        </div>
-      </div>
-    </div>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h3 style="text-align:left" class="title is-4">Unseen Human Videos</h3>
-        <div class="content has-text-justified">
-        TODO.        
-        </div>
-      </div>
-    </div>
-    <img width="100%" height="100%" src="./static/videos/liv_EK_seen/198000_epickitchen_open cabinet_3.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_EK_seen/198000_epickitchen_open microwave_1.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_EK_seen/198000_epickitchen_open door_3.gif" />
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h3 style="text-align:left" class="title is-4">Unseen Robot Videos</h3>
-        <div class="content has-text-justified">
-        TODO.        
-        </div>
-      </div>
-    </div>
-    <!-- <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_dishwasher.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_fridge.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_hang.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_tap.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot/liv_toaster.gif" /> -->
-
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_door_close.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_fridge_open.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_fridge_close.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_dishwasher_open.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_hat.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_toaster.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_hellorobot_single/reward_curve_object.gif" />
-
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h3 style="text-align:left" class="title is-4">Unseen Human Videos</h3>
-        <div class="content has-text-justified">
-        TODO.        
-        </div>
-      </div>
-    </div>
-    <img width="100%" height="100%" src="./static/videos/liv_EK_unseen/0_epickitchen_open cabinet_0.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_EK_unseen/0_epickitchen_open microwave_0.gif" />
-    <img width="100%" height="100%" src="./static/videos/liv_EK_unseen/0_epickitchen_open door_3.gif" />
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h3 style="text-align:left" class="title is-4">How can I generate LIV reward curves on my own videos?</h3>
-        <div class="content has-text-justified">
-        This is quite easy! We have prepared the code to exactly reproduce these videos in our code! TODO. 
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
